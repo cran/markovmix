@@ -33,7 +33,7 @@ Change log:
 # Load example MarkovMix object
 data("markov_mix_ex")
 
-# Reverse states (using function name)
+# Reverse states (using function)
 markov_mix_new1 <- restate(
   .object = markov_mix_ex,
   .fun = forcats::fct_rev
@@ -57,6 +57,7 @@ print(markov_mix_new3)
 }
 \seealso{
 Other MarkovMix utilities: 
+\code{\link{Extract.MarkovMix}},
 \code{\link{get_prior}()},
 \code{\link{get_prob}()},
 \code{\link{get_states_mat}()}
