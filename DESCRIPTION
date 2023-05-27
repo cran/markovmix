@@ -1,7 +1,7 @@
 Package: markovmix
 Title: Mixture of Markov Chains with Support of Higher Orders and
         Multiple Sequences
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Xiurui",
            family = "Zhu",
@@ -33,7 +33,7 @@ Collate: 'RcppExports.R' 'data.R' 'utils.R' 'markov_mix_utils.R'
 URL: https://github.com/zhuxr11/markovmix
 BugReports: https://github.com/zhuxr11/markovmix/issues
 NeedsCompilation: yes
-Packaged: 2023-04-24 17:20:40 UTC; Xiurui Zhu
+Packaged: 2023-05-27 05:15:14 UTC; Xiurui Zhu
 Author: Xiurui Zhu [aut, cre]
 Repository: CRAN
-Date/Publication: 2023-04-25 21:50:02 UTC
+Date/Publication: 2023-05-27 06:40:02 UTC

@@ -17,8 +17,9 @@
 
 \item{i}{Indices specifying components to extract or replace.}
 
-\item{value}{Numeric matrix of \code{length(states)^(order + 1L)} rows and
-number of columns equal to that of components.}
+\item{value}{Numeric matrix as soft counts for transition patterns (like \code{get_counts(object = x)}),
+whose rows correspond to the rows in \code{get_states_mat(x)}
+and columns correspond to the number of components to replace.}
 }
 \description{
 Operators to extract or replace components of a \code{\link{MarkovMix}} object.
@@ -27,11 +28,21 @@ Operators to extract or replace components of a \code{\link{MarkovMix}} object.
 Change log:
 \itemize{
 \item{0.1.1 Xiurui Zhu - Initiate the functions.}
+\item{0.1.2 Xiurui Zhu - Update function documentation.}
 }
 }
 \examples{
 # Load example MarkovMix object
 data("markov_mix_ex")
+
+# Derive transition pattern soft counts
+get_counts(object = markov_mix_ex)
+
+# Derive the order of Markov chains
+get_order(object = markov_mix_ex)
+
+# Derive the states of Markov chains
+get_states(object = markov_mix_ex)
 
 # Derive state transition patterns
 get_states_mat(markov_mix_ex)
@@ -53,7 +64,8 @@ markov_mix_ex[2L]
 markov_mix_ex[c(1L, 3L)]
 
 # Replace 1 or more components
-nrow_value <- length(markov_mix_ex[["states"]])^(markov_mix_ex[["order"]] + 1L)
+nrow_value <- length(get_states(object = markov_mix_ex, check = FALSE))^
+  (get_order(object = markov_mix_ex, check = FALSE) + 1L)
 markov_mix_ex2 <- markov_mix_ex
 markov_mix_ex2[2L] <- runif(nrow_value)
 print(markov_mix_ex2)
@@ -63,9 +75,12 @@ print(markov_mix_ex3)
 }
 \seealso{
 Other MarkovMix utilities: 
+\code{\link{get_counts}()},
+\code{\link{get_order}()},
 \code{\link{get_prior}()},
 \code{\link{get_prob}()},
 \code{\link{get_states_mat}()},
+\code{\link{get_states}()},
 \code{\link{restate}()}
 }
 \author{

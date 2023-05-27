@@ -12,11 +12,13 @@ status](https://www.r-pkg.org/badges/version/markovmix)](https://CRAN.R-project.
 [![R-CMD-check](https://github.com/zhuxr11/markovmix/workflows/R-CMD-check/badge.svg)](https://github.com/zhuxr11/markovmix/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/zhuxr11/markovmix/branch/master/graph/badge.svg)](https://app.codecov.io/gh/zhuxr11/markovmix?branch=master)
+[![Download
+stats](https://cranlogs.r-pkg.org/badges/grand-total/markovmix)](https://CRAN.R-project.org/package=markovmix)
 <!-- badges: end -->
 
 **Package**: [*markovmix*](https://github.com/zhuxr11/markovmix)
-0.1.1<br /> **Author**: Xiurui Zhu<br /> **Modified**: 2023-04-25
-00:46:25<br /> **Compiled**: 2023-04-25 00:46:28
+0.1.2<br /> **Author**: Xiurui Zhu<br /> **Modified**: 2023-05-26
+19:42:22<br /> **Compiled**: 2023-05-26 19:42:25
 
 The goal of `markovmix` is to fit mixture of Markov chains of higher
 orders from multiple sequences. It is also compatible with ordinary
@@ -340,7 +342,8 @@ print(mk_mix_fit2[c(1L, 3L)], print_max = 6L, print_min = 6L)
 #> # ... 10 more rows in transition matrix ...
 
 # Replace 1 component with random probabilities
-nrow_value <- length(mk_mix_fit2[["states"]])^(mk_mix_fit2[["order"]] + 1L)
+nrow_value <- length(get_states(object = mk_mix_fit2, check = FALSE))^
+  (get_order(object = mk_mix_fit2, check = FALSE) + 1L)
 mk_mix_fit3 <- mk_mix_fit2
 mk_mix_fit3[2L] <- runif(nrow_value)
 print(mk_mix_fit3, print_max = 6L, print_min = 6L)

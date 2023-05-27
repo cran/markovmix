@@ -89,6 +89,8 @@ fit_markov_mix <- function(seq_list, order. = 1L, states = NULL, clusters = NULL
 #' \code{print.MarkovMix} prints \code{\link{MarkovMix}} object in a user-friendly form,
 #' including component priors and transition matrices.
 #'
+#' @importFrom pillar pillar
+#'
 #' @param x \code{\link{MarkovMix}} object.
 #' @param sep Character (1L) used as separator between states in the row names of transition matrix.
 #' @param print_max,print_min Integers as the numbers of rows to print each transition matrix.
@@ -109,9 +111,9 @@ fit_markov_mix <- function(seq_list, order. = 1L, states = NULL, clusters = NULL
 #'
 #' @example man-roxygen/ex-fit_markov_mix.R
 print.MarkovMix <- function(x, sep = "->", print_max = 20L, print_min = 10L, ...) {
-  count_mat <- x[["counts"]]
-  order. <- x[["order"]]
-  states <- x[["states"]]
+  count_mat <- get_counts(object = x, check = FALSE)
+  order. <- get_order(object = x, check = FALSE)
+  states <- get_states(object = x, check = FALSE)
   states_df <- get_states_mat(object = x, check = FALSE) %>%
     as.data.frame()
   n_comp <- ncol(count_mat)
@@ -186,8 +188,8 @@ print.MarkovMix <- function(x, sep = "->", print_max = 20L, print_min = 10L, ...
 #' @example man-roxygen/ex-predict_markov_mix.R
 predict.MarkovMix <- function(object, newdata, aggregate. = TRUE, ...) {
   prob_mat <- get_prob(object = object, check = FALSE)
-  order. <- object[["order"]]
-  states <- object[["states"]]
+  order. <- get_order(object = object, check = FALSE)
+  states <- get_states(object = object, check = FALSE)
   seq_factor_res <- seq_list_to_factors(newdata, states = states)
   seq_factor_list <- seq_factor_res[["seq_list"]]
   states <- seq_factor_list[["states"]]
