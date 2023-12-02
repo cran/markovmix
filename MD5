@@ -1,14 +1,14 @@
-11f2527d760144e7bb95bd74d020c536 *DESCRIPTION
+30b1ba2350710a0fc90809d8c8c15e81 *DESCRIPTION
 3fc2ab1c3f46348c4c934cb55b31761d *LICENSE
 68ac684267ad5f8180aeda3c1c097b09 *NAMESPACE
-82ec4b7c0ec9b0271f89ddbe77da4703 *NEWS.md
-3f301c3bee91ee9223e43536cbb96f08 *R/RcppExports.R
+ec1e59256408fd194b94602518402c37 *NEWS.md
+f735945040c5506e0c930052ba916321 *R/RcppExports.R
 0ba9e01331f23cb102c9640d64abb94f *R/data.R
 f94cbca0a38fc73d37973e98d9e0c54f *R/markov_mix.R
 713b1217be91ea4e49b5c168324fbab9 *R/markov_mix_utils.R
 ca20aeb3ed980881691318bdab23b025 *R/markovmix-package.R
 98cfe04b3c9ca03424b504fa4e09f88a *R/utils.R
-079ecfc85c325822d7b2aead52531ad2 *README.md
+5251348e939817719e048ca0e9f98366 *README.md
 d6f922046ca7d3a37c3a470989fa829c *data/markov_mix_ex.rda
 651e4951a1a19e8e75af4c5c35efce7a *inst/include/markovmix.h
 c512c1630fa888a5a320bceb4c684f4b *inst/include/markovmix_RcppExports.h
@@ -27,7 +27,7 @@ e4737a50ded69b53249a96e8257ac037 *man/markovmix-package.Rd
 1b30fd2e45e9f23f18e4d19be60b0f23 *man/predict.MarkovMix.Rd
 5adf781bea80833d8521f58b88406ed8 *man/print.MarkovMix.Rd
 1252628209638da1245e00ad072d0549 *man/restate.Rd
-a27411bbada6009b1f54f5bf0c02e88c *src/RcppExports.cpp
+4612d4f433732cc52d734938fee79a5c *src/RcppExports.cpp
 f9e009fcb614b9a6e0dc1b6b43b85c3c *src/fit_markov.cpp
 5325d79ec7d07358846de3ff8f45aa65 *tests/testthat.R
 1dc09975339249a55c20b6f9e97bad12 *tests/testthat/test-markov_mix.R
